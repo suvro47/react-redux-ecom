@@ -30,6 +30,9 @@ const CartItemReducer = (state = initialSate, action) => {
       const index = temp.findIndex((itr) => itr.id === action.payload.id);
       temp.splice(index, 1);
       return temp;
+    case "CLEAR_CART":
+      return [];
+
     default:
       return state;
   }

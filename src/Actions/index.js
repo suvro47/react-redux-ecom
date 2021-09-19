@@ -28,6 +28,12 @@ export const removeItemFromCart = (item) => {
   };
 };
 
+export const clearCart = () => {
+  return {
+    type: "CLEAR_CART",
+  };
+};
+
 export const incrementInTotalQuantity = () => {
   return {
     type: "INCREMENT_IN_TOTAL",
@@ -44,6 +50,12 @@ export const decrementFixedQuantityInTotalQuantity = (quantity) => {
   return {
     type: "DECREMENT_FIXED_QUANTITY_IN_TOTAL",
     payload: quantity,
+  };
+};
+
+export const clearTotalQuantity = () => {
+  return {
+    type: "CLEAR_TOTAL_QUANTITY",
   };
 };
 

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 import Cart from "./Cart";
-import { modalClose } from "../Actions";
+import { modalClose, clearCart, clearTotalQuantity } from "../Actions";
 import { Link } from "react-router-dom";
 
 const customStyles = {
@@ -44,7 +44,6 @@ function CartList() {
       <div className="main-content">
         <div className="m-10">
           {cartItems.map((c, index) => {
-            //cost += c.price * c.quantity;
             return <Cart key={index} props={c} />;
           })}
         </div>
@@ -62,7 +61,8 @@ function CartList() {
                 className="px-2 py-1 mx-8 text-base text-white bg-red-700 rounded shadow-2xl"
                 onClick={(e) => {
                   e.preventDefault();
-                  //cartItems.splice(0, cartItems.length);
+                  dispatch(clearCart());
+                  dispatch(clearTotalQuantity());
                 }}
               >
                 Clear Cart
