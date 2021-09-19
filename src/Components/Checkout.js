@@ -3,35 +3,27 @@ import { Link } from "react-router-dom";
 
 export default function Purchese() {
   const cartItems = useSelector((state) => state.cartItems);
-  let cost = 1;
+  let cost = 0;
+
+  // total cost calculation
+  for (let i = 0; i < cartItems.length; i++) {
+    cost += cartItems[i].price * cartItems[i].quantity;
+  }
 
   return (
     <>
       <div className="h-screen mt-8 font-sans font-medium bg-contain bg-gradient-to-r from-gray-100 to-gray-200">
-        <div className="w-1/2 m-auto border">
-          <ul className="flex justify-between p-2">
-            <li className="w-auto m-auto mt-0 rounded"> Sl No</li>
-            <li className="flex justify-center m-auto mt-0 rounded w-52 ">
-              Title
-            </li>
-            <li className="w-auto m-auto mt-0 rounded"> Price</li>
-            <li className="w-auto m-auto mt-0 rounded">Quantity</li>
-          </ul>
-        </div>
-
-        {cartItems.map(
-          ({ title, price, quantity }, index) =>
-            (quantity > 0 ? true : false) && (
-              <div className="w-1/2 m-auto border" key={index}>
-                <ul className="flex justify-between p-2">
-                  <li className="w-2 m-auto mt-0 rounded"> {index + 1}</li>
-                  <li className="flex m-auto mt-0 rounded w-52">{title}</li>
-                  <li className="w-auto m-auto mt-0 rounded"> {price}</li>
-                  <li className="w-auto m-auto mt-0 rounded">{quantity}</li>
-                </ul>
-              </div>
-            )
-        )}
+        {cartItems.map(({ title, price, quantity }, index) => (
+          <div className="w-1/2 m-auto border" key={index}>
+            <ul className="flex justify-between p-2">
+              <li className="w-auto"> {index + 1}</li>
+              <li className="w-auto">{title}</li>
+              <li className="w-auto"> Price : {price}</li>
+              <li className="w-auto">Quantity : {quantity}</li>
+              <li className="w-auto">Cost : {quantity * price}</li>
+            </ul>
+          </div>
+        ))}
 
         <div className="w-1/2 m-auto mt-4 border ">
           <hr></hr>

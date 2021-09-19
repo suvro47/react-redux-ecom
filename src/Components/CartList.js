@@ -18,8 +18,10 @@ const customStyles = {
 function CartList() {
   const cartItems = useSelector((state) => state.cartItems);
   const isModalOpen = useSelector((state) => state.isModalOpen);
+  const totalQuantity = useSelector((state) => state.totalQuantity);
+
   const dispatch = useDispatch();
-  let cost = 0;
+
   return (
     <Modal
       isOpen={isModalOpen}
@@ -42,34 +44,34 @@ function CartList() {
       <div className="main-content">
         <div className="m-10">
           {cartItems.map((c, index) => {
-            cost += c.price * c.quantity;
+            //cost += c.price * c.quantity;
             return <Cart key={index} props={c} />;
           })}
         </div>
 
-        {cost === 0 && (
+        {!totalQuantity ? (
           <div className="warning">
             <div className="flex flex-row justify-between w-3/4 m-auto mt-20 text-xl font-black text-red-900">
               <h1> Opps !! You haven't selected any product yet :( </h1>
             </div>
           </div>
-        )}
-
-        {cost !== 0 && (
-          <div className="flex flex-row justify-center w-1/2 p-2 m-auto">
-            <button
-              className="px-2 py-1 mx-8 text-base text-white bg-red-700 rounded shadow-2xl"
-              onClick={(e) => {
-                e.preventDefault();
-                //cartItems.splice(0, cartItems.length);
-              }}
-            >
-              Clear Cart
-            </button>
-            <button className="px-2 py-1 text-base text-white bg-green-700 rounded shadow-2xl">
-              <Link to="/checkout"> Checkout </Link>
-            </button>
-          </div>
+        ) : (
+          <>
+            <div className="flex flex-row justify-center w-1/2 p-2 m-auto">
+              <button
+                className="px-2 py-1 mx-8 text-base text-white bg-red-700 rounded shadow-2xl"
+                onClick={(e) => {
+                  e.preventDefault();
+                  //cartItems.splice(0, cartItems.length);
+                }}
+              >
+                Clear Cart
+              </button>
+              <button className="px-2 py-1 text-base text-white bg-green-700 rounded shadow-2xl">
+                <Link to="/checkout"> Checkout </Link>
+              </button>
+            </div>
+          </>
         )}
       </div>
     </Modal>

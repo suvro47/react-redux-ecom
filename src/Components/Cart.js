@@ -17,8 +17,8 @@ function Cart({ props }) {
   const currentItem = cartItems.find((item) => item.id === id);
 
   function calcuatePrice() {
-    let p = currentItem.quantity * price;
-    return p.toFixed(2);
+    let totalPrice = currentItem.quantity * price;
+    return totalPrice.toFixed(2);
   }
 
   return (
