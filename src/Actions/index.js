@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const addToCart = (item) => {
   return {
     type: "ADD_TO_CART",
@@ -55,4 +57,12 @@ export const modalClose = () => {
   return {
     type: "CLOSE",
   };
+};
+
+export const fetchProducts = async (dispatch) => {
+  const res = await axios.get("https://fakestoreapi.com/products");
+  dispatch({
+    type: "FETCH_PRODUCTS",
+    payload: res.data,
+  });
 };

@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Loader from "react-loader-spinner";
 import Product from "./Product";
+import { fetchProducts } from "../Actions";
 
 function ProductList() {
-  const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) => {
-        setProducts(res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        return (
-          <>
-            <div className="flex flex-col items-center mt-48">
-              <h1> Network Error </h1>
-            </div>
-          </>
-        );
-      });
-    setIsLoading(true);
-  }, []);
+    dispatch(fetchProducts);
+  }, [dispatch]);
 
   return (
     <>
