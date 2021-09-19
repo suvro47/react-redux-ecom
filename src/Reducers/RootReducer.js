@@ -8,7 +8,7 @@ const RootReducer = combineReducers({
   cartItems: CartItemReducer,
   totalQuantity: QuantityReducer,
   isModalOpen: ModalControllReducer,
-  products: FetchReducer,
+  fetchInfo: FetchReducer,
 });
 
 export default RootReducer;

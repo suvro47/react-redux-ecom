@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "react-loader-spinner";
 import Product from "./Product";
 import { fetchProducts } from "../Actions";
 
 function ProductList() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const products = useSelector((state) => state.products);
+  const fetchInfo = useSelector((state) => state.fetchInfo);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProducts);
@@ -16,10 +14,10 @@ function ProductList() {
   return (
     <>
       <div className="h-auto font-sans font-medium bg-gradient-to-r from-gray-100 to-gray-200">
-        {!isLoading ? (
+        {!fetchInfo.loading ? (
           <div>
             <section className="flex flex-wrap justify-around pb-10">
-              {products.map((p, index) => (
+              {fetchInfo.products.map((p, index) => (
                 <Product key={index} props={p} />
               ))}
             </section>

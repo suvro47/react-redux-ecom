@@ -59,10 +59,29 @@ export const modalClose = () => {
   };
 };
 
+export const fetchSuccess = (items) => {
+  return {
+    type: "FETCH_SUCCESS",
+    payload: items,
+  };
+};
+
+export const fetchFailure = (message) => {
+  return {
+    type: "FETCH_FAILURE",
+    payload: message,
+  };
+};
+
 export const fetchProducts = async (dispatch) => {
-  const res = await axios.get("https://fakestoreapi.com/products");
-  dispatch({
-    type: "FETCH_PRODUCTS",
-    payload: res.data,
-  });
+  await axios
+    .get("https://fakestoreapi.com/products")
+    .then((res) => {
+      // success
+      dispatch(fetchSuccess(res.data));
+    })
+    .catch((err) => {
+      // error
+      dispatch(fetchFailure(err.message));
+    });
 };
