@@ -1,14 +1,10 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
+import RouteHandler from "./Components/RouteHandler";
 
 function App() {
   return (
     <div className="App">
-      <section className="sticky top-0">
-        <Navbar />
-      </section>
-      <Home />
+      <RouteHandler />
     </div>
   );
 }

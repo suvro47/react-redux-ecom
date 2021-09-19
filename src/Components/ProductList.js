@@ -28,19 +28,21 @@ function ProductList() {
 
   return (
     <>
-      {!isLoading ? (
-        <div>
-          <section className="flex flex-wrap justify-around pb-10">
-            {products.map((p, index) => (
-              <Product key={index} props={p} />
-            ))}
-          </section>
-        </div>
-      ) : (
-        <div className="w-20 m-auto">
-          <Loader type="Bars" color="#00BFFF" height={80} width={100} />
-        </div>
-      )}
+      <div className="h-auto font-sans font-medium bg-gradient-to-r from-gray-100 to-gray-200">
+        {!isLoading ? (
+          <div>
+            <section className="flex flex-wrap justify-around pb-10">
+              {products.map((p, index) => (
+                <Product key={index} props={p} />
+              ))}
+            </section>
+          </div>
+        ) : (
+          <div className="w-20 h-screen m-auto mt-40">
+            <Loader type="Bars" color="#00BFFF" height={80} width={100} />
+          </div>
+        )}
+      </div>
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 import Cart from "./Cart";
 import { modalClose } from "../Actions";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -65,8 +66,7 @@ function CartList() {
               Clear Cart
             </button>
             <button className="px-2 py-1 text-base text-white bg-green-700 rounded shadow-2xl">
-              {/* <Link to="/checkout"> Checkout </Link> */}
-              Checkout
+              <Link to="/checkout"> Checkout </Link>
             </button>
           </div>
         )}

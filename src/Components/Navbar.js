@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import logo from "../Assets/logo.jpg";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { modalOpen } from "../Actions";
 
 import "font-awesome/css/font-awesome.min.css";
@@ -16,8 +16,7 @@ function Navbar() {
         <div className="flex">
           <img className="w-20 h-20" src={logo} alt="logo" />
           <div className="flex flex-col justify-center">
-            {/* <Link to="/"> &nbsp; EgalMart </Link> */}
-            &nbsp; eShopping
+            <Link to="/"> &nbsp; eShopping </Link>
           </div>
         </div>
 
