@@ -1,9 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
+import CancelRoundedIcon from "@material-ui/icons/CancelRounded";
 import {
   incrementInTotalQuantity,
   decrementInTotalQuantity,
   incrementQuantityInCartItem,
   decrementQuantityInCartItem,
+  removeItemFromCart,
+  decrementFixedQuantityInTotalQuantity,
 } from "../Actions";
 
 function Cart({ props }) {
@@ -14,34 +17,38 @@ function Cart({ props }) {
   const currentItem = cartItems.find((item) => item.id === id);
 
   function calcuatePrice() {
-    let p = currentItem.count * price;
+    let p = currentItem.quantity * price;
     return p.toFixed(2);
   }
 
   return (
     <>
       {currentItem.quantity > 0 && (
-        <div className="flex flex-row flex-wrap p-2 mb-2 font-sans font-medium border rounded shadow-2xl">
+        <div className="flex p-2 mb-2 font-sans font-medium border rounded shadow-2xl">
           <div className="float-left">
             <button
               className="px-2 py-1"
               onClick={(e) => {
                 e.preventDefault();
+                dispatch(
+                  decrementFixedQuantityInTotalQuantity(currentItem.quantity)
+                );
+                dispatch(removeItemFromCart(currentItem));
               }}
             >
-              X
+              <CancelRoundedIcon />
             </button>
           </div>
           <div className="flex flex-col justify-center p-2 mx-4">
-            <img className="w-28 h-28" src={image} alt="" />
+            <img className="h-28" src={image} alt="" />
           </div>
 
-          <div className="flex flex-col justify-center w-32 p-2 mx-4">
+          <div className="flex flex-col justify-center p-2 mx-4">
             <p> {title}</p>
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
-            <p> {price}$ </p>
+            <p> {price} $ </p>
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
@@ -56,7 +63,7 @@ function Cart({ props }) {
               >
                 -
               </button>
-              <div className="px-2 py-1 text-center border">
+              <div className="w-8 px-2 py-1 text-center border">
                 {currentItem.quantity}
               </div>
               <button
@@ -73,7 +80,7 @@ function Cart({ props }) {
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
-            <p> Cost : {calcuatePrice()}$ </p>
+            <p> Cost : {calcuatePrice()} $ </p>
           </div>
         </div>
       )}

@@ -6,9 +6,9 @@ import { modalClose } from "../Actions";
 const customStyles = {
   content: {
     top: "80px",
+    bottom: "auto",
     left: "35%",
     right: "auto",
-    bottom: "auto",
     width: "65%",
     height: "80%",
   },
@@ -24,8 +24,9 @@ function CartList() {
       isOpen={isModalOpen}
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
-      style={customStyles}
       htmlOpenClassName="overflow-hidden"
+      //className="absolute w-full bg-black g:w-1/2 md:w-1/2"
+      style={customStyles}
     >
       <button
         className="-mt-4 text-3xl font-semibold"

@@ -1,6 +1,6 @@
 const initialSate = [];
 
-const ProductReducer = (state = initialSate, action) => {
+const CartItemReducer = (state = initialSate, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       const updatedItem = { ...action.payload, quantity: 1 };
@@ -24,9 +24,15 @@ const ProductReducer = (state = initialSate, action) => {
         return temp;
       }
       return state;
+    case "REMOVE_FROM_CART":
+      const temp = [...state];
+      temp.find((p) => p.id === action.payload.id).quantity = 0;
+      const index = temp.findIndex((itr) => itr.id === action.payload.id);
+      temp.splice(index, 1);
+      return temp;
     default:
       return state;
   }
 };
 
-export default ProductReducer;
+export default CartItemReducer;

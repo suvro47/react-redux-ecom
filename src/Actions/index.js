@@ -19,6 +19,13 @@ export const decrementQuantityInCartItem = (item) => {
   };
 };
 
+export const removeItemFromCart = (item) => {
+  return {
+    type: "REMOVE_FROM_CART",
+    payload: item,
+  };
+};
+
 export const incrementInTotalQuantity = () => {
   return {
     type: "INCREMENT_IN_TOTAL",
@@ -28,6 +35,13 @@ export const incrementInTotalQuantity = () => {
 export const decrementInTotalQuantity = () => {
   return {
     type: "DECREMENT_IN_TOTAL",
+  };
+};
+
+export const decrementFixedQuantityInTotalQuantity = (quantity) => {
+  return {
+    type: "DECREMENT_FIXED_QUANTITY_IN_TOTAL",
+    payload: quantity,
   };
 };
 
