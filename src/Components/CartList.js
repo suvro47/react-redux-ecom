@@ -61,6 +61,7 @@ function CartList() {
               className="px-2 py-1 mx-8 text-base text-white bg-red-700 rounded shadow-2xl"
               onClick={(e) => {
                 e.preventDefault();
+                //cartItems.splice(0, cartItems.length);
               }}
             >
               Clear Cart

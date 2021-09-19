@@ -10,7 +10,7 @@ export default function Purchese() {
       <div className="h-screen mt-8 font-sans font-medium bg-contain bg-gradient-to-r from-gray-100 to-gray-200">
         <div className="w-1/2 m-auto border">
           <ul className="flex justify-between p-2">
-            <li className="w-auto m-auto mt-0 rounded"> SL NO</li>
+            <li className="w-auto m-auto mt-0 rounded"> Sl No</li>
             <li className="flex justify-center m-auto mt-0 rounded w-52 ">
               Title
             </li>
@@ -25,9 +25,7 @@ export default function Purchese() {
               <div className="w-1/2 m-auto border" key={index}>
                 <ul className="flex justify-between p-2">
                   <li className="w-2 m-auto mt-0 rounded"> {index + 1}</li>
-                  <li className="flex m-auto mt-0 rounded w-52">
-                    {title}
-                  </li>
+                  <li className="flex m-auto mt-0 rounded w-52">{title}</li>
                   <li className="w-auto m-auto mt-0 rounded"> {price}</li>
                   <li className="w-auto m-auto mt-0 rounded">{quantity}</li>
                 </ul>

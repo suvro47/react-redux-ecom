@@ -18,8 +18,8 @@ function RouteHandler() {
             <Checkout />
           </Route>
           <Route path="/*">
-            <div className="flex flex-col items-center mt-48">
-              <h1> 404 not found </h1>
+            <div className="flex flex-col items-center h-screen mt-48">
+              <h1> 404 NOT FOUND :( </h1>
             </div>
           </Route>
         </Switch>

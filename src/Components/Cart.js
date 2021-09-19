@@ -48,7 +48,7 @@ function Cart({ props }) {
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
-            <p> {price} $ </p>
+            <p> {price}$ </p>
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
@@ -80,7 +80,7 @@ function Cart({ props }) {
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
-            <p> Cost : {calcuatePrice()} $ </p>
+            <p> {calcuatePrice()}$ </p>
           </div>
         </div>
       )}
