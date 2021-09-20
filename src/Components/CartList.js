@@ -17,7 +17,7 @@ function CartList() {
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
       htmlOpenClassName="overflow-hidden"
-      className="relative w-full p-4 bg-white rounded shadow-2xl h-5/6 lg:w-4/6 lg:left-1/3 top-20"
+      className="relative w-full p-4 bg-gray-500 rounded shadow-2xl h-5/6 lg:w-4/6 lg:left-1/3 top-20"
     >
       <button
         className="-mt-4 text-3xl font-semibold"

@@ -24,7 +24,7 @@ function Cart({ props }) {
   return (
     <>
       {currentItem.quantity > 0 && (
-        <div className="flex flex-wrap p-2 mb-1 font-sans font-medium rounded shadow-2xl lg:flex-nowrap md:no-wrap">
+        <div className="flex flex-wrap p-2 mb-1 font-sans font-medium bg-white rounded shadow-2xl lg:flex-nowrap md:no-wrap">
           <div className="float-left">
             <button
               className="px-2 py-1"
