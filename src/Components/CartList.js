@@ -4,17 +4,6 @@ import Cart from "./Cart";
 import { modalClose, clearCart, clearTotalQuantity } from "../Actions";
 import { Link } from "react-router-dom";
 
-const customStyles = {
-  content: {
-    top: "80px",
-    bottom: "auto",
-    left: "35%",
-    right: "auto",
-    width: "65%",
-    height: "80%",
-  },
-};
-
 function CartList() {
   const cartItems = useSelector((state) => state.cartItems);
   const isModalOpen = useSelector((state) => state.isModalOpen);
@@ -28,8 +17,7 @@ function CartList() {
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
       htmlOpenClassName="overflow-hidden"
-      //className="absolute w-full bg-black g:w-1/2 md:w-1/2"
-      style={customStyles}
+      className="absolute w-full h-screen p-4 bg-white rounded shadow-2xl lg:w-4/6 lg:left-1/3 top-20"
     >
       <button
         className="-mt-4 text-3xl font-semibold"

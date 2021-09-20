@@ -24,7 +24,7 @@ function Cart({ props }) {
   return (
     <>
       {currentItem.quantity > 0 && (
-        <div className="flex p-2 mb-2 font-sans font-medium border rounded shadow-2xl">
+        <div className="flex flex-wrap p-2 mb-1 font-sans font-medium rounded shadow-2xl lg:flex-nowrap md:no-wrap">
           <div className="float-left">
             <button
               className="px-2 py-1"
@@ -39,8 +39,8 @@ function Cart({ props }) {
               <CancelRoundedIcon />
             </button>
           </div>
-          <div className="flex flex-col justify-center p-2 mx-4">
-            <img className="h-28" src={image} alt="" />
+          <div className="flex flex-col justify-center lg:mx-4 lg:p-2">
+            <img className="w-20 h-20" src={image} alt="" />
           </div>
 
           <div className="flex flex-col justify-center p-2 mx-4">
