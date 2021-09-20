@@ -31,7 +31,7 @@ function Product({ props }) {
           {!cartItems.find((item) => item.id === id) ? (
             <div className="m-auto w-28">
               <button
-                className="px-2 my-2 font-bold text-black bg-gray-200 rounded"
+                className="px-2 my-2 font-medium text-black bg-gray-200 rounded"
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(addToCart(props));

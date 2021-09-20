@@ -14,7 +14,7 @@ function ProductList() {
 
   return (
     <>
-      <div className="h-auto font-sans font-medium bg-gradient-to-r from-gray-100 to-gray-200">
+      <div className="font-sans font-medium h-5/6 bg-gradient-to-r from-gray-100 to-gray-200">
         {!fetchInfo.loading ? (
           <div>
             <section className="flex flex-wrap justify-around pb-10">

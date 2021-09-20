@@ -43,7 +43,7 @@ function Cart({ props }) {
             <img className="w-20 h-20" src={image} alt="" />
           </div>
 
-          <div className="flex flex-col justify-center p-2 mx-4">
+          <div className="flex flex-col justify-center w-48 p-2 mx-4">
             <p> {title}</p>
           </div>
 
