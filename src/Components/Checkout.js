@@ -12,7 +12,7 @@ export default function Purchese() {
 
   return (
     <>
-      <div className="h-screen mt-8 font-sans font-medium">
+      <div className="h-auto mt-8 font-sans font-medium">
         {cartItems.map(({ title, price, quantity }, index) => (
           <div
             className="w-full p-2 m-2 border lg:m-auto lg:w-1/2 md:m-2 md:p-4 lg:p-4"
