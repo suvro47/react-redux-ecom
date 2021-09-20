@@ -17,7 +17,7 @@ function CartList() {
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
       htmlOpenClassName="overflow-hidden"
-      className="relative w-full h-full p-4 rounded shadow-2xl lg:w-4/6 lg:left-1/3 top-20"
+      className="relative w-full p-4 rounded shadow-2xl h-5/6 lg:w-4/6 lg:left-1/3 top-20"
     >
       <button
         className="-mt-4 text-3xl font-semibold"
@@ -30,7 +30,7 @@ function CartList() {
       </button>
 
       <div className="main-content">
-        <div className="m-10">
+        <div className="m-10 overscroll-auto h-5/6">
           {cartItems.map((c, index) => {
             return <Cart key={index} props={c} />;
           })}

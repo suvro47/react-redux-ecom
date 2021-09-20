@@ -37,7 +37,7 @@ export default function Purchese() {
 
         <div className="flex flex-row justify-between w-1/2 p-2 m-auto">
           <button className="px-2 py-1 my-10 text-base text-white bg-blue-700 rounded shadow-2xl">
-            <Link to="/print"> Print </Link>
+            <Link to="/"> Back To Home </Link>
           </button>
           <button className="px-2 py-1 my-10 text-base text-white bg-green-700 rounded shadow-2xl">
             <Link to="/purchese_request"> Purchese </Link>
