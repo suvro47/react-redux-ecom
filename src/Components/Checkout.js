@@ -14,7 +14,10 @@ export default function Purchese() {
     <>
       <div className="h-screen mt-8 font-sans font-medium bg-contain bg-gradient-to-r from-gray-100 to-gray-200">
         {cartItems.map(({ title, price, quantity }, index) => (
-          <div className="w-full p-2 m-2 border lg:m-auto lg:w-1/2" key={index}>
+          <div
+            className="w-full p-2 m-2 border lg:m-auto lg:w-1/2 md:m-2 md:p-4 lg:p-4"
+            key={index}
+          >
             <ul className="flex justify-between p-2">
               <li className="w-auto"> {index + 1} .</li>
               <li className="w-48">{title}</li>
