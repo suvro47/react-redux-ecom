@@ -17,7 +17,7 @@ export default function Purchese() {
           <div className="w-1/2 m-auto border" key={index}>
             <ul className="flex justify-between p-2">
               <li className="w-auto"> {index + 1}</li>
-              <li className="w-auto">{title}</li>
+              <li className="w-48">{title}</li>
               <li className="w-auto"> {price} $ </li>
               <li className="w-auto"> x </li>
               <li className="w-auto">{quantity} </li>
