@@ -9,8 +9,8 @@ function ProductList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts);
-  }, [dispatch]);
+    if (fetchInfo.loading) dispatch(fetchProducts);
+  }, [dispatch, fetchInfo.loading]);
 
   return (
     <>
