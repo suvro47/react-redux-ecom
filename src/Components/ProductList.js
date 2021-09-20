@@ -7,6 +7,7 @@ import { fetchProducts } from "../Actions";
 function ProductList() {
   const fetchInfo = useSelector((state) => state.fetchInfo);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchProducts);
   }, [dispatch]);

@@ -71,10 +71,10 @@ export const modalClose = () => {
   };
 };
 
-export const fetchSuccess = (items) => {
+export const fetchSuccess = (fetchData) => {
   return {
     type: "FETCH_SUCCESS",
-    payload: items,
+    payload: fetchData,
   };
 };
 
