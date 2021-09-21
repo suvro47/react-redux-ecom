@@ -21,18 +21,18 @@ export default function Purchese() {
             <ul className="flex justify-between p-2">
               <li className="w-auto"> {index + 1} .</li>
               <li className="w-48">{title}</li>
-              <li className="w-auto"> {price} $ </li>
-              <li className="w-auto"> x </li>
+              <li className="w-auto"> $&nbsp;{price} </li>
+              <li className="w-auto"> &nbsp; x &nbsp; </li>
               <li className="w-auto">{quantity} </li>
-              <li className="w-auto"> = </li>
-              <li className="w-auto">{quantity * price} $</li>
+              <li className="w-auto"> &nbsp; = &nbsp; </li>
+              <li className="w-auto">$&nbsp;{quantity * price}</li>
             </ul>
           </div>
         ))}
 
         <div className="flex justify-end w-1/2 p-2 m-auto mt-4 border">
           <hr></hr>
-          Total Cost : {cost.toFixed(2)} $
+          Total Cost : $&nbsp;{cost.toFixed(2)}
         </div>
 
         <div className="flex flex-row justify-between w-1/2 p-2 m-auto">
