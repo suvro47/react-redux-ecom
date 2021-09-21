@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
-import Cart from "./Cart";
-import { modalClose, clearCart, clearTotalQuantity } from "../Actions";
+import Cart from "../Cart/Cart";
+import { modalClose, clearCart, clearTotalQuantity } from "../../Actions";
 import { Link } from "react-router-dom";
 
 function CartList() {
@@ -17,7 +17,7 @@ function CartList() {
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
       htmlOpenClassName="overflow-hidden"
-      className="relative w-full h-auto p-4 rounded shadow-2xl lg:w-4/6 lg:left-1/3 top-20"
+      className="relative w-full h-auto p-4 rounded shadow-3xl lg:w-4/6 lg:left-1/3 top-20"
     >
       <button
         className="-mt-6 -mb-10 text-3xl font-semibold"
@@ -38,7 +38,7 @@ function CartList() {
 
         {!totalQuantity ? (
           <div className="warning">
-            <div className="flex flex-row justify-between w-3/4 m-auto my-20 text-xl font-black text-red-900">
+            <div className="flex flex-row justify-between w-3/4 m-auto mt-12 mb-20 text-xl font-black text-red-900">
               <h1> Opps !! You haven't selected any product yet :( </h1>
             </div>
           </div>

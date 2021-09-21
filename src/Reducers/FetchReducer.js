@@ -15,7 +15,7 @@ const FetchReducer = (state = initState, action) => {
     case "FETCH_FAILURE":
       return {
         products: [],
-        loading: false,
+        loading: true,
         error: action.payload,
       };
     default:

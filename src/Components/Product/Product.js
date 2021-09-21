@@ -5,7 +5,7 @@ import {
   decrementInTotalQuantity,
   incrementQuantityInCartItem,
   decrementQuantityInCartItem,
-} from "../Actions";
+} from "../../Actions";
 
 function Product({ props }) {
   const { id, title, price, image } = props;

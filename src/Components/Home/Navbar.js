@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import logo from "../Assets/logo.jpg";
+import logo from "../../Assets/logo.jpg";
 import { Link } from "react-router-dom";
-import { modalOpen } from "../Actions";
+import { modalOpen } from "../../Actions";
 
 import "font-awesome/css/font-awesome.min.css";
 

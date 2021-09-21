@@ -7,7 +7,7 @@ import {
   decrementQuantityInCartItem,
   removeItemFromCart,
   decrementFixedQuantityInTotalQuantity,
-} from "../Actions";
+} from "../../Actions";
 
 function Cart({ props }) {
   const { id, title, price, image } = props;

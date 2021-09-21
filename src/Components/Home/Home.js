@@ -1,5 +1,5 @@
-import ProductList from "./ProductList";
-import CartList from "./CartList";
+import ProductList from "../Product/ProductList";
+import CartList from "../Cart/CartList";
 
 function Home() {
   return (
