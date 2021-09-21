@@ -12,14 +12,14 @@ export default function Purchese() {
 
   return (
     <>
-      <div className="h-auto mt-8 font-sans font-medium">
+      <div className="h-screen mt-8 mr-2 font-sans font-medium">
         {cartItems.map(({ title, price, quantity }, index) => (
           <div
             className="w-full p-2 m-2 border lg:m-auto lg:w-1/2 md:m-2 md:p-4 lg:p-4"
             key={index}
           >
             <ul className="flex justify-between p-2">
-              <li className="w-auto"> {index + 1} .</li>
+              <li className="w-auto"> {index + 1}&nbsp;.</li>
               <li className="w-48">{title}</li>
               <li className="w-auto"> $&nbsp;{price} </li>
               <li className="w-auto"> &nbsp; x &nbsp; </li>
