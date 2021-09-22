@@ -16,27 +16,21 @@ function ProductList() {
 
   return (
     <>
-      {!fetchInfo.products.length ? (
-        <div className="flex flex-col items-center h-screen mt-48">
-          <h1> {fetchInfo.error.toUpperCase()} </h1>
-        </div>
-      ) : (
-        <div className="font-sans font-medium h-5/6 bg-gradient-to-r from-gray-100 to-gray-200">
-          {!fetchInfo.loading ? (
-            <div>
-              <section className="flex flex-wrap justify-around pb-10">
-                {fetchInfo.products.map((p, index) => (
-                  <Product key={index} props={p} />
-                ))}
-              </section>
-            </div>
-          ) : (
-            <div className="w-20 h-screen m-auto mt-40">
-              <Loader type="Bars" color="#00BFFF" height={80} width={100} />
-            </div>
-          )}
-        </div>
-      )}
+      <div className='font-sans font-medium h-5/6 bg-gradient-to-r from-gray-100 to-gray-200'>
+        {!fetchInfo.loading ? (
+          <div>
+            <section className='flex flex-wrap justify-around pb-10'>
+              {fetchInfo.products.map((p, index) => (
+                <Product key={index} props={p} />
+              ))}
+            </section>
+          </div>
+        ) : (
+          <div className='w-20 h-screen m-auto mt-40'>
+            <Loader type='Bars' color='#00BFFF' height={80} width={100} />
+          </div>
+        )}
+      </div>
     </>
   );
 }
