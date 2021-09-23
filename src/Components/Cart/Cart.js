@@ -10,7 +10,7 @@ import {
 } from "../../Actions";
 
 function Cart({ props }) {
-  const { id, title, price } = props;
+  const { id, title, price, image } = props;
   const cartItems = useSelector((state) => state.cartItems);
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ function Cart({ props }) {
 
   return (
     <>
-      {currentItem.quantity > 0 && (
+      {currentItem.quantity && (
         <div className='flex flex-wrap p-2 mb-1 font-sans font-medium bg-white rounded shadow-2xl lg:flex-nowrap md:no-wrap'>
           <div className='float-left'>
             <button
@@ -40,11 +40,15 @@ function Cart({ props }) {
             </button>
           </div>
           <div className='flex flex-col justify-center lg:mx-4 lg:p-2'>
-            <img
-              className='w-20 h-20'
-              src={`data:image/jpg;base64,${localStorage.getItem(id)}`}
-              alt=''
-            />
+            {localStorage.getItem(id) ? (
+              <img
+                className='w-20 h-20'
+                src={`data:image/jpg;base64,${localStorage.getItem(id)}`}
+                alt=''
+              />
+            ) : (
+              <img className='w-20 h-20' src={image} alt='' />
+            )}
           </div>
 
           <div className='flex flex-col justify-center w-48 p-2 mx-4'>
