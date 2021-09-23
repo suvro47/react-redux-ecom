@@ -3,7 +3,7 @@ import RouteHandler from "./Components/Route/RouteHandler";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <RouteHandler />
     </div>
   );

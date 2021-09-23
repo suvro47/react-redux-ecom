@@ -1,4 +1,5 @@
 import axios from "axios";
+import imageToBase64 from "image-to-base64/browser";
 
 export const addToCart = (item) => {
   return {
@@ -88,9 +89,20 @@ export const fetchFailure = (message) => {
 export const fetchProducts = async (dispatch) => {
   await axios
     .get("https://fakestoreapi.com/products")
-    .then((res) => {
-      // success
-      dispatch(fetchSuccess(res.data));
+    .then((responses) => {
+      responses.data.forEach((res) => {
+        imageToBase64(res.image)
+          .then((base64image) => {
+            localStorage.setItem(res.id, base64image);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+      return responses.data;
+    })
+    .then((result) => {
+      dispatch(fetchSuccess(result));
     })
     .catch((err) => {
       // error

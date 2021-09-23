@@ -8,8 +8,6 @@ function ProductList() {
   const fetchInfo = useSelector((state) => state.fetchInfo);
   const dispatch = useDispatch();
 
-  console.log(fetchInfo.error);
-
   useEffect(() => {
     if (fetchInfo.loading) dispatch(fetchProducts);
   }, [dispatch, fetchInfo.loading]);
