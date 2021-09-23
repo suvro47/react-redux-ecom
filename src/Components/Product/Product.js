@@ -33,7 +33,7 @@ function Product({ props }) {
         <div className='pb-2 pl-8 pr-4'>
           <p> {title}</p>
           <p>
-            Price : <span className='text-black-600'> {price} </span> $
+            Price : <span className='text-black-600'> $&nbsp;{price} </span>
           </p>
         </div>
 

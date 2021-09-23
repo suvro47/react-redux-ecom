@@ -17,7 +17,7 @@ function CartList() {
       ariaHideApp={false}
       onRequestClose={() => dispatch(modalClose())}
       htmlOpenClassName='overflow-hidden'
-      className='absolute w-full h-full p-4 overflow-scroll bg-gray-100 rounded shadow-2xl lg:w-1/2 lg:left-1/2 top-20'
+      className='absolute right-0 w-full h-full p-4 overflow-scroll bg-gray-100 rounded shadow-2xl top-20 lg:w-auto md:w-auto'
     >
       <button
         className='-mt-6 -mb-10 text-3xl font-semibold'
@@ -36,7 +36,7 @@ function CartList() {
           })}
           <div className='flex flex-row justify-center w-full p-2 m-auto lg:w-1/2'>
             <button
-              className='w-auto px-2 py-1 mx-8 text-base text-white bg-red-700 rounded shadow-2xl'
+              className='w-auto px-2 py-2 mx-8 text-base text-white bg-red-700 rounded shadow-2xl'
               onClick={(e) => {
                 e.preventDefault();
                 dispatch(clearCart());
@@ -45,7 +45,7 @@ function CartList() {
             >
               Clear Cart
             </button>
-            <button className='w-auto px-2 py-1 text-base text-white bg-green-700 rounded shadow-2xl'>
+            <button className='w-auto px-2 text-base text-white bg-green-700 rounded shadow-2xl'>
               <Link to='/checkout'> Checkout </Link>
             </button>
           </div>

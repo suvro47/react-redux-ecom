@@ -21,10 +21,16 @@ function Cart({ props }) {
     return totalPrice.toFixed(2);
   }
 
+  function shortTitle(title) {
+    let updatedTitle =
+      title.length > 40 ? title.substring(0, 40) + "..." : title;
+    return updatedTitle;
+  }
+
   return (
     <>
       {currentItem.quantity && (
-        <div className='flex flex-wrap p-2 mb-1 font-sans font-medium bg-white rounded shadow-2xl lg:flex-nowrap md:no-wrap'>
+        <div className='flex p-2 mx-2 my-1 font-sans font-medium bg-white rounded shadow-2xl'>
           <div className='float-left'>
             <button
               className='px-2 py-1'
@@ -51,44 +57,42 @@ function Cart({ props }) {
             )}
           </div>
 
-          <div className='flex flex-col justify-center w-48 p-2 mx-4'>
-            <p> {title}</p>
+          <div className='flex flex-col justify-center p-2 mx-4 w-36'>
+            <p> {shortTitle(title)}</p>
           </div>
 
-          <div className='flex flex-col justify-center p-2 mx-4'>
-            <p>$&nbsp;{price} </p>
-          </div>
-
-          <div className='flex flex-col justify-center p-2 mx-4'>
-            <div className='flex flex-row justify-center w-8'>
-              <button
-                className='px-2 py-1 border rounded'
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(decrementInTotalQuantity());
-                  dispatch(decrementQuantityInCartItem(currentItem));
-                }}
-              >
-                -
-              </button>
-              <div className='w-8 px-2 py-1 text-center border'>
-                {currentItem.quantity}
+          <div className='flex flex-col justify-center w-36'>
+            <div className='p-2 mx-4'>
+              <div className='flex flex-row justify-center'>
+                <button
+                  className='w-10 px-2 py-1 border rounded'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(decrementInTotalQuantity());
+                    dispatch(decrementQuantityInCartItem(currentItem));
+                  }}
+                >
+                  -
+                </button>
+                <div className='w-10 px-2 py-1 text-center border'>
+                  {currentItem.quantity}
+                </div>
+                <button
+                  className='w-10 px-2 py-1 border rounded'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(incrementInTotalQuantity());
+                    dispatch(incrementQuantityInCartItem(currentItem));
+                  }}
+                >
+                  +
+                </button>
               </div>
-              <button
-                className='px-2 py-1 border rounded'
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(incrementInTotalQuantity());
-                  dispatch(incrementQuantityInCartItem(currentItem));
-                }}
-              >
-                +
-              </button>
             </div>
-          </div>
 
-          <div className='flex flex-col justify-center p-2 mx-4'>
-            <p> $&nbsp;{calcuatePrice()} </p>
+            <div className='p-2 mx-auto'>
+              <p> $&nbsp;{calcuatePrice()} </p>
+            </div>
           </div>
         </div>
       )}
