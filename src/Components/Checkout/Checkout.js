@@ -10,6 +10,12 @@ export default function Purchese() {
     cost += cartItems[i].price * cartItems[i].quantity;
   }
 
+  function shortTitle(title) {
+    let updatedTitle =
+      title.length > 40 ? title.substring(0, 40) + "..." : title;
+    return updatedTitle;
+  }
+
   return (
     <>
       <div className='h-full mt-8 mr-2 font-sans font-medium'>
@@ -19,9 +25,9 @@ export default function Purchese() {
             key={index}
           >
             <ul className='flex justify-between p-2'>
-              <li className='w-auto'> {index + 1}&nbsp;.</li>
-              <li className='w-48'>{title}</li>
-              <li className='w-auto'> $&nbsp;{price} </li>
+              <li className='w-10'> {index + 1}&nbsp;.</li>
+              <li className='w-48'>{shortTitle(title)}</li>
+              <li className='w-10'> $&nbsp;{price} </li>
               <li className='w-auto'> &nbsp; x &nbsp; </li>
               <li className='w-auto'>{quantity} </li>
               <li className='w-auto'> &nbsp; = &nbsp; </li>
