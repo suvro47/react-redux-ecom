@@ -10,7 +10,6 @@ import {
 function Product({ props }) {
   const { id, title, price, image } = props;
   const cartItems = useSelector((state) => state.cartItems);
-  const fetchInfo = useSelector((state) => state.fetchInfo);
   const dispatch = useDispatch();
 
   const currentItem = cartItems.find((item) => item.id === id);

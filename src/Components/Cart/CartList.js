@@ -51,8 +51,8 @@ function CartList() {
           </div>
         </div>
       ) : (
-        <div className='flex flex-row justify-between w-3/4 m-auto mt-20 mb-20 text-xl font-black text-red-900'>
-          <h1> Opps !! You haven't selected any product yet :( </h1>
+        <div className='flex flex-row justify-between m-auto mt-20 mb-20 text-xl font-black text-red-900 min-w-min'>
+          <h1> Opps !! Cart is empty :( </h1>
         </div>
       )}
     </Modal>
